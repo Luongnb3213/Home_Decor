@@ -271,7 +271,7 @@ h3,
 p,
 h1,
 h2,
-h4 {
+h4, button{
   font-family: var(--primary-font-family);
 }
 .shop_item {
@@ -380,6 +380,7 @@ h4 {
   color: var(--text-color);
 }
 .layer.mobile-nav::after {
+  z-index: 3;
   opacity: 1 !important;
   visibility: visible !important;
 }
@@ -539,4 +540,18 @@ header.stickyy {
 }
 .d-none {
   display: none !important;
+}
+.shop_img{
+  aspect-ratio: 0.74782608695;
+}
+
+.body_head_img_text{
+  left: 10%;
+}
+.body_head_img_text h1{
+  font-size: 65px;
+  line-height:1;
+}
+.body_head_img {
+  z-index:1;
 }

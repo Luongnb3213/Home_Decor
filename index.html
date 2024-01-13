@@ -157,8 +157,26 @@
                                         <div class="basis-1/2">
                                             <div class="flex space-x-6">
                                                 <div class="basis-1/2">
+                                                    <div
+                                                        class="shop_img shop_item_img relative group/item overflow-hidden  rounded-2xl">
+                                                        <a href="#">
+                                                            <img src="./images/HD_shop_img1.jpg"
+                                                                class="rounded-2xl transition-all h-full w-full duration-200 ease-linear group-hover/item:scale-105"
+                                                                alt="">
+                                                        </a>
+                                                        <button class="absolute flex items-center bottom-10 justify-center px-3 py-6 left-1/2 -translate-x-1/2 w-60 sm:w-72 bg-white text-black text-3xl rounded-300 font-semibold">Sofa</button>
+                                                    </div>
                                                 </div>
                                                 <div class="basis-1/2">
+                                                    <div
+                                                        class="shop_img shop_item_img relative group/item overflow-hidden rounded-2xl">
+                                                        <a href="#">
+                                                            <img src="./images/HD_shop_img2.jpg"
+                                                                class="rounded-2xl transition-all h-full w-full duration-200 ease-linear group-hover/item:scale-105"
+                                                                alt="">
+                                                        </a>
+                                                        <button class="absolute flex items-center bottom-10 justify-center px-3 py-6 left-1/2 -translate-x-1/2 w-60 sm:w-72 bg-white text-black text-3xl rounded-300 font-semibold">Lighting</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1115,11 +1133,17 @@
                             </a>
                         </li>
 
-                        <li class="menu_item px-12">
-
+                        <li class="menu_item px-12 mb-6">
+                            <div class="shop_img shop_item_img relative group overflow-hidden">
+                                <img src="./images/HD_shop_img1.jpg" class="rounded-2xl transition-all h-full w-full duration-200 ease-linear group-hover/item:scale-105" alt="">
+                                <button class="absolute flex items-center bottom-10 justify-center px-3 py-6 left-1/2 -translate-x-1/2 w-60 sm:w-72 bg-white text-black text-3xl rounded-300 font-semibold">Sofa</button>
+                            </div>
                         </li>
                         <li class="menu_item px-12">
-
+                            <div class="shop_img shop_item_img group relative overflow-hidden">
+                                <img src="./images/HD_shop_img2.jpg" class="rounded-2xl transition-all h-full w-full duration-200 ease-linear group-hover/item:scale-105" alt="">
+                                <button class="absolute flex items-center bottom-10 justify-center px-3 py-6 left-1/2 -translate-x-1/2 w-60 sm:w-72 bg-white text-black text-3xl rounded-300 font-semibold">Underwear</button>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -1923,6 +1947,26 @@
         <!--end floor 2 -->
     </header>
     <main>
+        <div class="body_head_img relative md:block hidden">
+            <img src="./images/HD_bg.webp" sizes="100vw" class="w-full h-full object-cover object-center" alt="" />
+            <div class="body_head_img_text absolute top-1/2 -translate-y-1/2 flex gap-8 justify-start flex-col items-start">
+                <p class="text-neutral-900 text-2xl font-semibold uppercase">Top Trending</p>
+                <h1 class="text-neutral-900 font-normal">Lifestyle
+                </h1>
+                <p class="text-neutral-900 text-3xl font-normal leading-normal mb-10">Upgrade your home with our amazing assortment of decor.</p>
+                <button class="flex items-center justify-center px-10 py-7 w-91 hover:text-black hover:bg-white transition-all ease-linear duration-200  bg-black text-white text-12 uppercase rounded-300 font-semibold border border-solid border-load_more_btn_color_border">Explore Now</button>
+            </div>
+        </div>
+        <div class="body_head_img_mobile relative block md:hidden">
+            <img src="./images/HD_bg2.webp" class="w-full h-full" alt="" />
+            <div class="body_head_img_text absolute top-1/2 -translate-y-1/2 flex gap-8 justify-start flex-col items-start">
+                <p class="text-neutral-900 text-2xl font-semibold uppercase">Top Trending</p>
+                <h1 class="text-neutral-900 font-normal">Lifestyle
+                </h1>
+                <p class="text-neutral-900 text-3xl font-normal leading-normal mb-10">Upgrade your home with our amazing assortment of decor.</p>
+                <button class="flex items-center justify-center px-5 py-6 w-60 hover:text-black hover:bg-white transition-all ease-linear duration-200  bg-black text-white text-12 uppercase rounded-300 font-semibold border border-solid border-load_more_btn_color_border">Explore Now</button>
+            </div>
+        </div>
         <div class="container mx-auto xxl:px-12 px-6">
             <div class="like_section">
                 <div class="section_text md:mt-40 mt-16">
@@ -3063,7 +3107,8 @@
                         <div
                             class="footer_content md:py-0 py-8 border-b md:border-none border-solid border-border-color">
                             <div class="flex justify-between items-center">
-                                <h3 class="md:mb-10 text-black text-2xl font-semibold uppercase">Sign Up to Newsletter</h3>
+                                <h3 class="md:mb-10 text-black text-2xl font-semibold uppercase">Sign Up to Newsletter
+                                </h3>
                                 <span class="md:hidden open-children-toogle relative">
                                 </span>
                             </div>
@@ -3106,7 +3151,8 @@
 
 
     </footer>
-    <div class="footer_mobile flex md:hidden bg-white items-center fixed bottom-0 right-0 left-0 pt-6 pb-6 gap-2 justify-between px-8">
+    <div
+        class="footer_mobile flex md:hidden bg-white items-center fixed bottom-0 right-0 left-0 pt-6 pb-6 gap-2 justify-between px-8">
         <a href="#" class="footer_item flex flex-col gap-2 justify-center items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                 <path d="M8.50128 13.283V10.9648" stroke="#111111" stroke-width="1.5" stroke-linecap="round"
@@ -3144,14 +3190,16 @@
         <a href="#" class="footer_item flex flex-col gap-2 justify-center items-center">
             <span class="footer_icon relative">
                 <i class="icon-heart_icon text-16"></i>
-                <span class="number absolute -top-3 w-7 h-7 left-4 flex justify-center items-center bg-main-color text-white uppercase text-base rounded-full text-center font-normal">2</span>
+                <span
+                    class="number absolute -top-3 w-7 h-7 left-4 flex justify-center items-center bg-main-color text-white uppercase text-base rounded-full text-center font-normal">2</span>
             </span>
             <span class="text-black text-13 font-medium">Wishlist</span>
         </a>
         <a href="#" class="footer_item flex flex-col gap-2 justify-center items-center">
             <span class="footer_icon relative">
                 <i class="icon-cart_icon text-16"></i>
-                <span class="number absolute -top-3 w-7 h-7 flex justify-center items-center left-4 bg-main-color text-white uppercase text-base rounded-full text-center font-normal">2</span>
+                <span
+                    class="number absolute -top-3 w-7 h-7 flex justify-center items-center left-4 bg-main-color text-white uppercase text-base rounded-full text-center font-normal">2</span>
             </span>
             <span class="text-black text-13 font-medium">Cart</span>
         </a>
@@ -3170,7 +3218,8 @@
                         '40': '4rem',
                         '28': '2.8rem',
                         '30': '3rem',
-                        '16':'1.6rem'
+                        '16': '1.6rem',
+                        '100':'10rem'
 
                     },
                     colors: {
@@ -3205,7 +3254,8 @@
                         '4-5': '4.5rem',
                         '35-100': '35%',
                         '3-5': '3.5rem',
-                        '32': '32rem'
+                        '32': '32rem',
+                        '91': '23rem'
                     },
                     height: {
                         '4-5': '4.5rem',

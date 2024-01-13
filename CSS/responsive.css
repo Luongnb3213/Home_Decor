@@ -14,7 +14,21 @@
     --aspect-ratio: 1.43348623853;
   }
 }
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .body_head_img {
+    z-index:1;
+    height: 600px;
+  }
+}
 @media (max-width: 767.5px) {
+  .body_head_img_mobile{
+    aspect-ratio:  1;
+  }
+  .body_head_img_text h1{
+    font-size: 40px;
+    line-height:1;
+  }
   .banner_text_2 {
     right: 8%;
     left: 8%;
@@ -61,7 +75,9 @@
     box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.06);
   }
 }
+
 @media (min-width: 768px) {
+
   .language,
   .footer-payment {
     width: unset !important;

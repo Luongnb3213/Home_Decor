@@ -1,3 +1,5 @@
+
+
 const menu_btn = document.querySelector("#menu");
 const mobile_nav = document.querySelector(".mobile-nav");
 const close_navbar_btn = document.querySelectorAll(".close_navbar_btn");
@@ -65,72 +67,22 @@ Array.from(close_navbar_btn).forEach(function (btn) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// const footer_icon = document.querySelectorAll(".open-children-toogle");
+const footer_icon = document.querySelectorAll(".open-children-toogle");
 
-// footer_icon.forEach((i) => {
-//   i.onclick = function () {
-//     let parentElement = i.parentElement.parentElement;
-//     let footer_list = parentElement.querySelector(".footer_list");
-// window.getComputedStyle để lấy giá trị của thuộc tính từ kiểu đã tính
-//  (computed style) thay vì từ thuộc tính trực tiếp được thiết lập trong
-//  style attribute.
-// Ví dụ: ở trên nếu sử dụng  footer_list.style.maxHeight thì sẽ ra là = "" nên cần sử dụng  window.getComputedStyle để nó lấy luôn giá trị đã tính
-//     let computedStyle = window.getComputedStyle(footer_list);
+footer_icon.forEach((i) => {
+  i.onclick = function () {
+    let parentElement = i.parentElement.parentElement;
+    let footer_list = parentElement.querySelector(".footer_list");
+    let computedStyle = window.getComputedStyle(footer_list);
 
-//     footer_list.style.maxHeight =
-//       computedStyle.maxHeight === "0px" ? footer_list.scrollHeight + "px" : "0";
-//     footer_list.classList.toggle("footer-list-padding");
-//     this.classList.toggle("open");
-//   };
-// });
+    footer_list.style.maxHeight =
+      computedStyle.maxHeight === "0px" ? footer_list.scrollHeight + "px" : "0";
+    footer_list.classList.toggle("footer-list-padding");
+    this.classList.toggle("open");
+  };
+});
 
-// var check = true;
-// window.addEventListener("scroll", () => {
-//   const windowHeight = document.documentElement.clientHeight;
-//   const maxScrollHeight = document.documentElement.scrollHeight - windowHeight;
-//   const back_top = document.querySelector(".back-top");
 
-//   const scrollYValue = window.scrollY;
-//   if (scrollYValue > 100) {
-//     if (check) {
-//       back_top.classList.add("back-top_show");
-//       back_top.onclick = function () {
-//         window.scrollTo({
-//           top: 0,
-//           behavior: "smooth",
-//         });
-//       };
-//       check = false;
-//     }
-//   } else {
-//     if (!check) {
-//       back_top.classList.remove("back-top_show");
-//       check = true;
-//     }
-//   }
-
-//   const percentage = ((scrollYValue / maxScrollHeight) * 100).toFixed(0);
-
-//   const test = document.querySelector(".bls_back-top");
-
-//   test.style.height = `${percentage}%`;
-
-//   let header = document.querySelector("header");
-//   header.classList.toggle("sticky", this.window.scrollY > header.clientHeight);
-//   // header_top_list.clientHeight
-//   let header_top = document.querySelector(".header_top");
-//   let header_mid = document.querySelector(".header_mid");
-//   if (header_top) {
-//     header_top.classList.toggle(
-//       "d-none",
-//       this.window.scrollY > header.clientHeight
-//     );
-//   }
-//   header_mid.classList.toggle(
-//     "d-none",
-//     this.window.scrollY > header.clientHeight
-//   );
-// });
 
 mobile_nav.onclick = (e) => {
   if (e.target.classList.contains("layer")) {
@@ -154,32 +106,32 @@ load_more_btn.onclick = (e) => {
   setTimeout(() => {
     loadMoreProduct();
     load_more_btn.remove();
-  }, 3000);
+  }, 2000);
 };
 const data = [
   {
+    name: 'Square Textured Striped',
     iamge1: "./images/img_TD/HD_TD_1.webp",
     image2: "./images/img_TD/HD_TD_1_2.webp",
   },
   {
+    name: 'Square Textured Striped',
     iamge1: "./images/img_TD/HD_TD_2_1.webp",
     image2: "./images/img_TD/HD_TD_2_2.webp",
   },
   {
+    name: 'Square Textured Striped',
     iamge1: "./images/img_TD/HD_TD_3_1.webp",
     image2: "./images/img_TD/HD_TD_3_2.webp",
   },
   {
+    name: 'Square Textured Striped',
     iamge1: "./images/img_TD/HD_TD_4_1.webp",
     image2: "./images/img_TD/HD_TD_4_2.webp",
   }
 ];
 const top_trend_container = document.querySelector("#top_trend");
 function loadMoreProduct() {
- 
-    data.forEach(d => {
-      console.log(d)
-    })
   data.forEach((d) => {
        let html = "";
     let top_trend_product = document.createElement("div");
@@ -191,32 +143,22 @@ function loadMoreProduct() {
             <img src=${d.image2}
                 class="top-0 left-0 group-hover:visible group-hover:opacity-100 group-hover:scale-110 invisible opacity-0  w-full h-full rounded-2xl absolute transition-all duration-300 ease-linear" />
         </a>
-        <div class="absolute top-6 left-6 flex flex-col gap-2">
-            <div>
-                <span
-                    class="py-1 w-20 px-5 bg-main-color flex items-center justify-center font-normal text-13 text-white rounded-30">-10%</span>
-            </div>
-            <div>
-                <span
-                    class="px-5 py-1 font-normal text-13 flex items-center justify-center bg-dicount_color  text-white rounded-30">Pre-Order</span>
-            </div>
-        </div>
         <div
-            class="trending_icon_list flex flex-col gap-2 absolute top-6 right-6 group-hover:translate-x-0 group-hover:visible group-hover:opacity-100 translate-x-8 invisible opacity-0 transition-all duration-200 ease-linear">
+            class="trending_icon_list flex flex-col gap-2 absolute xl:top-6 bottom-4 right-4 md:right-6 xl:group-hover:translate-x-0 xl:group-hover:visible xl:group-hover:opacity-100 xl:translate-x-8 xl:invisible xl:opacity-0 transition-all duration-200 ease-linear">
             <a href="#"
-                class="trending_icon hover:bg-black relative transition-all duration-200 ease-linear w-4-5 h-4-5 flex items-center justify-center text-2xl bg-white rounded-100 heart"
+                class="trending_icon hover:bg-black relative transition-all duration-200 ease-linear md:w-4-5 md:h-4-5 w-3-5 h-3-5 flex items-center justify-center text-2xl bg-white rounded-100 heart"
                 aria-label="icon">
                 <i class="icon-heart_icon"></i>
                 <span class="tooltip_heart">Add to Wishlist</span>
             </a>
             <a href="#"
-                class="trending_icon hover:bg-black relative transition-all duration-200 ease-linear w-4-5 h-4-5 flex items-center justify-center text-2xl bg-white rounded-100 cart"
+                class="trending_icon hover:bg-black relative transition-all duration-200 ease-linear md:w-4-5 md:h-4-5 w-3-5 h-3-5 flex items-center justify-center text-2xl bg-white rounded-100 cart"
                 aria-label="icon">
                 <i class="icon-compare"></i>
                 <span class="tooltip_heart">Add to Compare</span>
             </a>
             <a href="#"
-                class="trending_icon hover:bg-black relative transition-all duration-200 ease-linear w-4-5 h-4-5 flex items-center justify-center text-2xl bg-white rounded-100 search"
+                class="trending_icon hover:bg-black relative transition-all duration-200 ease-linear md:w-4-5 md:h-4-5 w-3-5 h-3-5 flex items-center justify-center text-2xl bg-white rounded-100 search"
                 aria-label="icon">
                 <i class="icon-search_icon"></i>
                 <span class="tooltip_heart">Quick View</span>
@@ -287,3 +229,97 @@ function getParentElement(element) {
     }
     return parentElement
 }
+
+function getRandomInt(n) {
+  return Math.floor(Math.random() * n);
+}
+var product_auto = setInterval(()=>{
+  let randomProduct = data[getRandomInt(data.length)];
+  let time_random = getRandomInt(10) + 1;
+  if (auto_delete) {
+    clearTimeout(auto_delete);
+  }
+  if (document.querySelector("#main_auto")) {
+    document.querySelector("#main_auto").remove();
+  }
+  let main_auto = document.createElement('div')
+  main_auto.id= 'main_auto'
+  let html = ` <div class="autobuy after:animate-diminish translate-y-full invisible opacity-0 after:w-full after:border-b-2 after:rounded-lg after:border-solid after:bottom-0 after:absolute after:-translate-x-4 after:border-black w-32 z-10 transition-all duration-500 ease-linear fixed bottom-20 left-12 hidden md:flex justify-start gap-5 p-4 pb-5 bg-white rounded-2xl">
+  <div class="autobuy_image"> 
+      <a href="#">
+          <img src=${randomProduct.iamge1}  width="60" class="rounded-lg" height="80" alt="image"  />
+      </a>
+  </div>
+  <div class="autobuy_text cursor-pointer flex gap-1 justify-center flex-col">
+       <p class="text-12 text-black">Jonson(Amirica) <span class="text-12 text-gray ml-1">purchased</span></p>
+       <p class="text-2xl text-black mb-3 ">Square Textured Striped</p>
+       <p class="flex items-center gap-1 text-12 text-gray">
+          <span class="text-12 text-black mr-4">${time_random} minutes ago</span>
+          <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.5 5.03906V5.49609C10.5 6.12109 10.3828 6.70703 10.1484 7.25391C9.91406 7.80078 9.58984 8.27734 9.17578 8.68359C8.76953 9.08984 8.29297 9.41016 7.74609 9.64453C7.19922 9.87891 6.61719 9.99609 6 9.99609C5.375 9.99609 4.78906 9.87891 4.24219 9.64453C3.69531 9.41016 3.21875 9.08594 2.8125 8.67188C2.40625 8.26562 2.08594 7.78906 1.85156 7.24219C1.61719 6.69531 1.5 6.11328 1.5 5.49609C1.5 4.87109 1.61719 4.28906 1.85156 3.75C2.08594 3.20313 2.41016 2.72266 2.82422 2.30859C3.23047 1.90234 3.70703 1.58203 4.25391 1.34766C4.80078 1.11328 5.38281 0.996094 6 0.996094C6.33594 0.996094 6.65625 1.03125 6.96094 1.10156C7.27344 1.17188 7.5625 1.26562 7.82812 1.38281C7.95312 1.44531 8.07812 1.45312 8.20312 1.40625C8.33594 1.35156 8.42969 1.26172 8.48438 1.13672C8.54688 1.01172 8.55078 0.886719 8.49609 0.761719C8.44922 0.628906 8.36328 0.535156 8.23828 0.480469C7.91016 0.324219 7.55469 0.207031 7.17188 0.128906C6.79688 0.0429687 6.40625 0 6 0C5.625 0 5.25781 0.0351562 4.89844 0.105469C4.53906 0.183594 4.19141 0.292969 3.85547 0.433594C3.52734 0.566406 3.21875 0.734375 2.92969 0.9375C2.63281 1.13281 2.35938 1.35547 2.10938 1.60547C1.85938 1.85547 1.63672 2.125 1.44141 2.41406C1.24609 2.71094 1.07812 3.02344 0.9375 3.35156C0.796875 3.67969 0.6875 4.02344 0.609375 4.38281C0.539062 4.74219 0.503906 5.11328 0.503906 5.49609C0.503906 5.87109 0.539062 6.23828 0.609375 6.59766C0.6875 6.95703 0.792969 7.30469 0.925781 7.64062C1.06641 7.96875 1.23828 8.27734 1.44141 8.56641C1.63672 8.86328 1.85938 9.13672 2.10938 9.38672C2.35938 9.63672 2.62891 9.85938 2.91797 10.0547C3.21484 10.2578 3.52734 10.4258 3.85547 10.5586C4.18359 10.6992 4.52734 10.8086 4.88672 10.8867C5.24609 10.957 5.61719 10.9922 6 10.9922C6.375 10.9922 6.74219 10.957 7.10156 10.8867C7.46094 10.8086 7.80469 10.6992 8.13281 10.5586C8.46875 10.4258 8.78125 10.2578 9.07031 10.0547C9.36719 9.85938 9.64062 9.63672 9.89062 9.38672C10.1406 9.13672 10.3633 8.86719 10.5586 8.57812C10.7539 8.28125 10.9219 7.96875 11.0625 7.64062C11.2031 7.3125 11.3125 6.96875 11.3906 6.60938C11.4609 6.25 11.4961 5.87891 11.4961 5.49609V5.03906C11.4961 4.89844 11.4453 4.78125 11.3438 4.6875C11.25 4.58594 11.1367 4.53516 11.0039 4.53516C10.8633 4.53516 10.7422 4.58594 10.6406 4.6875C10.5469 4.78125 10.5 4.89844 10.5 5.03906ZM10.6523 1.14844L6 5.80078L4.85156 4.65234C4.75781 4.55078 4.64062 4.5 4.5 4.5C4.35938 4.5 4.24219 4.55078 4.14844 4.65234C4.04688 4.74609 3.99609 4.86328 3.99609 5.00391C3.99609 5.14453 4.04688 5.26172 4.14844 5.35547L5.64844 6.85547C5.74219 6.95703 5.85938 7.00781 6 7.00781C6.14062 7.00781 6.25781 6.95703 6.35156 6.85547L11.3555 1.85156C11.4492 1.75781 11.4961 1.64062 11.4961 1.5C11.4961 1.35938 11.4492 1.24219 11.3555 1.14844C11.2539 1.04688 11.1328 0.996094 10.9922 0.996094C10.8594 0.996094 10.7461 1.04688 10.6523 1.14844Z"
+                fill="#111111"></path>
+            </svg>
+            Verify
+       </p>
+  </div>
+  <div class="close_autobuy cursor-pointer top-4 right-4 absolute">
+      <i class="icon-close"></i>
+  </div>
+</div>
+  `
+  main_auto.innerHTML = html
+
+  var auto_delete = setTimeout(() => {
+    document.querySelector(".autobuy").classList.remove("show");
+  }, 5000);
+
+  document.querySelector("body").appendChild(main_auto);
+  setTimeout(() => {
+    document.querySelector(".autobuy").classList.add("show");
+  },20)
+  
+  let  close_autobuy = document.querySelector(".close_autobuy")
+  close_autobuy.onclick = (e) => {
+    document.querySelector(".autobuy").classList.remove("show");
+    clearTimeout(auto_delete);
+  };
+},8000)
+
+
+var check = true;
+const header = document.querySelector("header")
+window.addEventListener("scroll", () => {
+  const windowHeight = document.documentElement.clientHeight;
+  const maxScrollHeight = document.documentElement.scrollHeight - windowHeight;
+  const back_top = document.querySelector(".back-top");
+
+  const scrollYValue = window.scrollY;
+  if (scrollYValue > 100) {
+    if (check) {
+      back_top.classList.add("back-top_show");
+      back_top.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+      check = false;
+    }
+  } else {
+    if (!check) {
+      back_top.classList.remove("back-top_show");
+      check = true;
+    }
+  }
+
+  const percentage = ((scrollYValue / maxScrollHeight) * 100).toFixed(0);
+
+  const test = document.querySelector(".bls_back-top");
+
+  test.style.height = `${percentage}%`;
+
+  let header_top_list = document.querySelector(".header_mid");
+  header.classList.toggle("stickyy", this.window.scrollY > header.clientHeight);
+  header_top_list.classList.toggle("d-none", this.window.scrollY > header.clientHeight);
+});

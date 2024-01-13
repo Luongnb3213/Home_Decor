@@ -216,6 +216,7 @@
   content: "\e905";
   color: var(--text-color);
 }
+
 html {
   padding: 0;
   margin: 0;
@@ -353,7 +354,7 @@ h4 {
 }
 .mobile-item-close {
   animation: fadein 0.5s linear;
-  display: block!important;
+  display: block !important;
 }
 .home,
 .shopp {
@@ -454,20 +455,88 @@ h4 {
 .trending_icon:hover i::before {
   color: var(--white-color);
 }
-.trending_icon:hover::before,.trending_icon:hover .tooltip_heart {
+.trending_icon:hover::before,
+.trending_icon:hover .tooltip_heart {
   visibility: visible;
   opacity: 1;
 }
-.next-btn:hover i::before ,.back-btn:hover i::before{
-   color: var(--white-color);
+.next-btn:hover i::before,
+.back-btn:hover i::before {
+  color: var(--white-color);
 }
-@keyframes fadein{
-  0%{
+@keyframes fadein {
+  0% {
     opacity: 0;
-    visibility:hidden;
+    visibility: hidden;
   }
-  100%{
+  100% {
     opacity: 1;
-    visibility:visible;
+    visibility: visible;
   }
+}
+.autobuy {
+  max-width: 90%;
+  box-shadow: 0 5px 30px #0000000d;
+}
+.close_autobuy i::before {
+  color: var(--black-color);
+}
+.show {
+  --tw-translate-y: 0px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.go_up {
+  animation: go_up 0.5s linear forwards;
+}
+@keyframes go_up {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes diminish {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+header.stickyy {
+  position: sticky !important;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 0.01rem 0.1rem rgba(0, 0, 0, 0.5);
+  scroll-behavior: smooth;
+  animation: header_go_up 0.5s ease;
+}
+@keyframes header_go_up {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: none;
+  }
+}
+.back-top_show {
+  --tw-scale-x: 1 !important;
+  --tw-scale-y: 1 !important;
+}
+.back-top {
+  border-radius: 50%;
+  box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.back-top_icon {
+  font-size: 1.2rem;
+  mix-blend-mode: difference;
+}
+.d-none {
+  display: none !important;
 }

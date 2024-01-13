@@ -1,3 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@media (min-width: 1200px) {
+  .container {
+    max-width: calc(1410px + 6rem) !important;
+  }
+
+}
+@media (max-width: 1199px) {
+  .banner h3{
+    font-size: 3rem;
+  }
+  .container {
+    max-width: 100% !important;
+  }
+  .banner {
+    --aspect-ratio: 1.43348623853;
+  }
+}
+@media (max-width: 767.5px) {
+  .banner_text_2{
+    right: 8%;
+    left: 8%;
+  }
+}
+@media (max-width: 524px){
+  .banner {
+    --aspect-ratio: 0.71;
+  }
+  
+}
+@media (max-width: 320px){
+  .banner {
+    --aspect-ratio: 0.6219076006;
+  }
+  
+}

@@ -2,139 +2,480 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-    font-family: "Jost";
-  
-    font-style: normal;
-  
-    font-weight: 400;
-  
-    font-display: swap;
-  
-    src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73ord4iYl.woff2)
-      format("woff2");
-  
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
-      U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  
-  /* latin */
-  
-  @font-face {
-    font-family: "Jost";
-  
-    font-style: normal;
-  
-    font-weight: 400;
-  
-    font-display: swap;
-  
-    src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2)
-      format("woff2");
-  
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-      U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  
-  /* latin-ext */
-  
-  @font-face {
-    font-family: "Jost";
-  
-    font-style: normal;
-  
-    font-weight: 500;
-  
-    font-display: swap;
-  
-    src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73ord4iYl.woff2)
-      format("woff2");
-  
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
-      U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  
-  /* latin */
-  
-  @font-face {
-    font-family: "Jost";
-  
-    font-style: normal;
-  
-    font-weight: 500;
-  
-    font-display: swap;
-  
-    src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2)
-      format("woff2");
-  
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-      U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  
-  /* latin-ext */
-  
-  @font-face {
-    font-family: "Jost";
-  
-    font-style: normal;
-  
-    font-weight: 600;
-  
-    font-display: swap;
-  
-    src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73ord4iYl.woff2)
-      format("woff2");
-  
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
-      U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  
-  /* latin */
-  
-  @font-face {
-    font-family: 'Jost';
-  
-    font-style: normal;
-  
-    font-weight: 600;
-  
-    font-display: swap;
-  
-    src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2) format('woff2');
-  
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  
-  @font-face {
-    font-family: "icomoon";
-  
-    src: url("../fonts/icomoon.eot?4w1jzc");
-  
-    src: url("../fonts/icomoon.eot?4w1jzc#iefix") format("embedded-opentype"),
-      url("../fonts/icomoon.ttf?4w1jzc") format("truetype"),
-      url("../fonts/icomoon.woff?4w1jzc") format("woff"),
-      url("../fonts/icomoon.svg?4w1jzc#icomoon") format("svg");
-  
-    font-weight: normal;
-  
-    font-style: normal;
-  
-    font-display: block;
-  }
-  
-html {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 62.5%;
-  }
-h1{
-    font-family: 'jost',san-serif;
-    color: red;
-}
-.text-3xl{
-    font-size: 3rem;
+  font-family: "Jost";
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  font-display: swap;
+
+  src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73ord4iYl.woff2)
+    format("woff2");
+
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* latin */
+
+@font-face {
+  font-family: "Jost";
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  font-display: swap;
+
+  src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2)
+    format("woff2");
+
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+
+@font-face {
+  font-family: "Jost";
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  font-display: swap;
+
+  src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73ord4iYl.woff2)
+    format("woff2");
+
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+
+@font-face {
+  font-family: "Jost";
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  font-display: swap;
+
+  src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2)
+    format("woff2");
+
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+
+@font-face {
+  font-family: "Jost";
+
+  font-style: normal;
+
+  font-weight: 600;
+
+  font-display: swap;
+
+  src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73ord4iYl.woff2)
+    format("woff2");
+
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+
+@font-face {
+  font-family: "Jost";
+
+  font-style: normal;
+
+  font-weight: 600;
+
+  font-display: swap;
+
+  src: url(https://fonts.gstatic.com/s/jost/v15/92zatBhPNqw73oTd4g.woff2)
+    format("woff2");
+
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "icomoon";
+
+  src: url("../fonts/icomoon.eot?4w1jzc");
+
+  src: url("../fonts/icomoon.eot?4w1jzc#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?4w1jzc") format("truetype"),
+    url("../fonts/icomoon.woff?4w1jzc") format("woff"),
+    url("../fonts/icomoon.svg?4w1jzc#icomoon") format("svg");
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: block;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?4w1jzc");
+  src: url("../fonts/icomoon.eot?4w1jzc#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?4w1jzc") format("truetype"),
+    url("../fonts/icomoon.woff?4w1jzc") format("woff"),
+    url("../fonts/icomoon.svg?4w1jzc#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --primary-color: #9c6d3a;
+  --primary-font-size: 1.4rem;
+  --primary-font-family: "Jost", sans-serif;
+  --black-color: #111;
+  --white-color: #fff;
+  --header-mobile-height: 5rem;
+  --text-color: #555;
+  --primary-font-weight: 400;
+  --border-color: #ebebeb;
+  --aspect-ratio: 2.657142857142857;
+}
+.icon-compare:before {
+  content: "\e90f";
+}
+.icon-cart_v2:before {
+  content: "\e908";
+  color: var(--white-color);
+}
+.icon-star:before {
+  content: "\e907";
+}
+.icon-db_arrow_up:before {
+  content: "\e906";
+  color: var(--white-color);
+}
+.icon-minus:before {
+  content: "\e909";
+}
+.icon-plus:before {
+  content: "\e90a";
+}
+.icon-close:before {
+  content: "\e90b";
+  color: var(--white-color);
+}
+.icon-arrow_left:before {
+  content: "\e90c";
+}
+.icon-arrow_right:before {
+  content: "\e90d";
+}
+.icon-nav_menu:before {
+  content: "\e90e";
+}
+.icon-cart_icon:before {
+  content: "\e900";
+}
+.icon-heart_icon:before {
+  content: "\e901";
+}
+.icon-Recently_viewed_icon:before {
+  content: "\e902";
+}
+.icon-account_icon:before {
+  content: "\e903";
+}
+.icon-search_icon:before {
+  content: "\e904";
+}
+.icon-arrow_down:before {
+  content: "\e905";
+  color: var(--text-color);
+}
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+.header_bot_image img {
+  height: 100%;
+  width: 95px;
+}
+.header_bot_link span i {
+  font-size: 0.5rem;
+}
+.header_bot_icon i {
+  font-size: 1.6rem;
+}
+.header_bot_icon span {
+  width: 1.8rem;
+  height: 1.8rem;
+  font-style: normal;
+  background-color: #9c6d3a;
+  line-height: 1.8rem;
+}
+.header_bot_item:hover .header_bot_link i::before {
+  color: var(--primary-color);
+}
+.header_bot_icon i::before {
+  transition: all 0.2s linear;
+}
+.header_bot_icon:hover i::before {
+  color: var(--primary-color);
+}
+.page_item {
+  width: 450%;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.05);
+  top: 105%;
+}
+.blog:hover .page_item,
+.page:hover .page_item {
+  top: 100%;
+}
+
+.product_item {
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.05);
+}
+.product:hover .product_item,
+.shop:hover .shop_item {
+  top: 95%;
+}
+span,
+h3,
+p,
+h1,
+h2,
+h4 {
+  font-family: var(--primary-font-family);
+}
+.shop_item {
+  left: 10%;
+  right: 10%;
+  top: 100%;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.05);
+}
+.social_item::after {
+  position: absolute;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  content: "";
+  border-bottom-color: var(--black-color);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-width: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.social_item:hover::after {
+  top: calc(100% + 5px);
+  visibility: visible;
+  opacity: 1;
+}
+.social_item_link:hover svg path {
+  fill: var(--black-color);
+}
+.social_item_link:hover svg circle {
+  stroke: var(--black-color);
+}
+.social_item_link svg circle {
+  transition: all 0.2s linear;
+}
+.social_item_link svg path {
+  transition: all 0.2s linear;
+}
+.social_item_link span {
+  z-index: 2;
+  font-size: 1.3rem;
+  line-height: normal;
+  border-radius: 5px;
+  max-width: 360px;
+  top: calc(100% + 5px);
+}
+.social_item:hover span {
+  top: calc(100% + 9px);
+}
+.footer_input button {
+  border-radius: 3rem;
+  line-height: normal;
+}
+.footer_input input {
+  border-radius: 3rem;
+  font-family: var(--primary-font-family);
+}
+.nav_bar_head {
+  z-index: 2;
+}
+.nav-bar_mobile {
+  z-index: 3;
+}
+.nav_bar_head_text .active {
+  opacity: 1;
+}
+.menu_item_link[id] i {
+  font-size: 1rem;
+}
+.go_in {
+  --tw-translate-x: 0px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.cate {
+  z-index: 1;
+}
+.mobile-item-close {
+  animation: fadein 0.5s linear;
+  display: block;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.home,
+.shopp {
+  z-index: 4;
+}
+.shop_layout,
+.shop_page {
+  z-index: 5;
+}
+.home .close_navbar_btn i::before,
+.shopp .close_navbar_btn i::before,
+.shop_layout .close_navbar_btn i::before,
+.shop_page .close_navbar_btn i::before,
+.pagee .close_navbar_btn i::before,
+.blogg .close_navbar_btn i::before,
+.productt .close_navbar_btn i::before,
+.product_layout .close_navbar_btn i::before,
+.product_feature .close_navbar_btn i::before,
+.product_detail .close_navbar_btn i::before,
+.thumb_position .close_navbar_btn i::before,
+.boot_sale .close_navbar_btn i::before,
+.product_type .close_navbar_btn i::before {
+  color: var(--text-color);
+}
+.layer.mobile-nav::after {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.section_image img {
+  height: 16rem;
+  border-radius: 16rem;
+}
+.section_image {
+  border-radius: 16rem;
+}
+.like_section_list::-webkit-scrollbar {
+  display: none;
+}
+.tooltip_heart {
+  position: absolute;
+  z-index: 2;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  line-height: normal;
+  font-family: var(--primary-font-family);
+  border-radius: 5px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  max-width: 360px;
+  content: "Add to Wislist";
+  text-align: center;
+  right: calc(100% + 9px);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  transition: all 0.2s linear;
+}
+.trending_icon::before {
+  position: absolute;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  content: "";
+  right: calc(100% + 4px);
+  border-left-color: var(--black-color);
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-width: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.trending_btn {
+  left: 5%;
+  right: 5%;
+}
+.banner_text {
+  left: 10%;
+}
+.banner_text_2 {
+  right: 5%;
+}
+.shop_gram_cart i {
+  font-size: 12px;
+}
+.banner {
+  aspect-ratio: var(--aspect-ratio);
+}
+.back-btn,
+.next-btn {
+  z-index: 1;
+}
+.trending_icon i {
+  transform: all 0.2s linear;
+}
+.trending_icon:hover i::before {
+  color: var(--white-color);
+}
+.trending_icon:hover::before,.trending_icon:hover .tooltip_heart {
+  visibility: visible;
+  opacity: 1;
+}
+.next-btn:hover i::before ,.back-btn:hover i::before{
+   color: var(--white-color);
+}
+@keyframes fadein{
+  0%{
+    opacity: 0;
+    visibility:hidden;
+  }
+  100%{
+    opacity: 1;
+    visibility:visible;
+  }
+}

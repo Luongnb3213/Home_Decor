@@ -21,6 +21,11 @@
     left: 8%;
   }
 }
+@media (min-width: 768px) {
+ .language,.footer-payment  {
+  width: unset;
+ }
+}
 @media (max-width: 524px){
   .banner {
     --aspect-ratio: 0.71;

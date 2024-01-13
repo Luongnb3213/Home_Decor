@@ -248,7 +248,8 @@ const back_btns = document.querySelectorAll(".back-btn");
 
 Array.from(next_btns).forEach((next_btn) => {
   next_btn.onclick = (e) => {
-    let parentElement = next_btn.parentElement;
+    
+    let parentElement = next_btn && getParentElement(next_btn);
     let trending_list_product = parentElement.querySelector(
       ".like_section_list"
     );
@@ -263,7 +264,8 @@ Array.from(next_btns).forEach((next_btn) => {
 });
 Array.from(back_btns).forEach((back_btn) => {
   back_btn.onclick = (e) => {
-    let parentElement = back_btn.parentElement;
+ 
+    let parentElement = back_btn && getParentElement(back_btn);
     let trending_list_product = parentElement.querySelector(
       ".like_section_list"
     );
@@ -277,3 +279,11 @@ Array.from(back_btns).forEach((back_btn) => {
     }
   };
 });
+
+function getParentElement(element) {
+  let parentElement= element;
+    while (!parentElement.classList.contains("ymh_section")){
+      parentElement = parentElement.parentElement;
+    }
+    return parentElement
+}

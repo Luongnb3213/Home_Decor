@@ -509,6 +509,9 @@ h4, button{
     width: 0%;
   }
 }
+header{
+  z-index:2;
+}
 header.stickyy {
   position: sticky !important;
   top: 0;

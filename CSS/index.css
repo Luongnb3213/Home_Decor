@@ -353,7 +353,7 @@ h4, button{
   z-index: 1;
 }
 .mobile-item-close {
-  animation: fadein 0.5s linear;
+  animation: fadein 0.2s linear;
   display: block !important;
 }
 .home,

@@ -67,18 +67,21 @@ Array.from(close_navbar_btn).forEach(function (btn) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const footer_icon = document.querySelectorAll(".open-children-toogle");
+const footer_content = document.querySelectorAll(".footer_content");
 
-footer_icon.forEach((i) => {
+footer_content.forEach((i) => {
   i.onclick = function () {
-    let parentElement = i.parentElement.parentElement;
-    let footer_list = parentElement.querySelector(".footer_list");
-    let computedStyle = window.getComputedStyle(footer_list);
-
-    footer_list.style.maxHeight =
-      computedStyle.maxHeight === "0px" ? footer_list.scrollHeight + "px" : "0";
-    footer_list.classList.toggle("footer-list-padding");
-    this.classList.toggle("open");
+    let footer_icon = i.querySelector(".open-children-toogle");
+    if(footer_icon){
+      let footer_list = i.querySelector(".footer_list");
+      let computedStyle = window.getComputedStyle(footer_list);
+  
+      footer_list.style.maxHeight =
+        computedStyle.maxHeight === "0px" ? footer_list.scrollHeight + "px" : "0";
+      footer_list.classList.toggle("footer-list-padding");
+      footer_icon.classList.toggle("open");
+    }
+ 
   };
 });
 
@@ -169,7 +172,11 @@ function loadMoreProduct() {
             TO CART</a>
     </div>
     <div class="top_trend_text mt-6 flex gap-3 flex-col">
-        <h3 class="text-black text-3xl font-normal">Square Textured Striped</h3>
+        <h3 class="text-black text-3xl font-normal">
+        <a href="#">
+           Square Textured Striped
+        </a>
+        </h3>
         <div class="star">
             <i class="icon-star"></i>
             <i class="icon-star"></i>

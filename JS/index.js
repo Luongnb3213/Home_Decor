@@ -466,12 +466,16 @@ const cart_btn = document.querySelector("#cart_btn");
 cart_btn.onclick = function () {
   cart_show_up();
 };
+const cart_btn_mobile = document.querySelector("#cart_btn_mobile");
+cart_btn_mobile.onclick = function () {
+  cart_show_up();
+};
 function render_cart_product(cart_list) {
   let bls_items = document.querySelector(".bls-items");
   bls_items.innerHTML = "";
   cart_list.forEach((e) => {
     let div = document.createElement("div");
-    div.className = "minicart-product flex gap-6 pb-8 mb-8 border-dashed border-b border-border-color";
+    div.className = "minicart-product flex gap-6 pb-8 mb-8 border-dashed border-border-color border-b";
     let html = `<img src="${e.iamge1}" width="87" height="116" alt="image" class="rounded-xl" />
       <div class="minicart-product-info flex flex-col justify-start relative flex-1">
           <a href="#" class="text-black text-3xl font-normal">${e.name}</a>

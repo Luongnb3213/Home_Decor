@@ -473,7 +473,7 @@ cart_btn_mobile.onclick = function () {
 function render_cart_product(cart_list) {
   let bls_items = document.querySelector(".bls-items");
   bls_items.innerHTML = "";
-  cart_list.forEach((e) => {
+  cart_list.toReversed().forEach((e) => {
     let div = document.createElement("div");
     div.className = "minicart-product flex gap-6 pb-8 mb-8 border-dashed border-border-color border-b";
     let html = `<img src="${e.iamge1}" width="87" height="116" alt="image" class="rounded-xl" />

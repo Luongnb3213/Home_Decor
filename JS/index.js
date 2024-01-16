@@ -1,5 +1,3 @@
-
-
 const menu_btn = document.querySelector("#menu");
 const mobile_nav = document.querySelector(".mobile-nav");
 const close_navbar_btn = document.querySelectorAll(".close_navbar_btn");
@@ -72,20 +70,19 @@ const footer_content = document.querySelectorAll(".footer_content");
 footer_content.forEach((i) => {
   i.onclick = function () {
     let footer_icon = i.querySelector(".open-children-toogle");
-    if(footer_icon){
+    if (footer_icon) {
       let footer_list = i.querySelector(".footer_list");
       let computedStyle = window.getComputedStyle(footer_list);
-  
+
       footer_list.style.maxHeight =
-        computedStyle.maxHeight === "0px" ? footer_list.scrollHeight + "px" : "0";
+        computedStyle.maxHeight === "0px"
+          ? footer_list.scrollHeight + "px"
+          : "0";
       footer_list.classList.toggle("footer-list-padding");
       footer_icon.classList.toggle("open");
     }
- 
   };
 });
-
-
 
 mobile_nav.onclick = (e) => {
   if (e.target.classList.contains("layer")) {
@@ -97,7 +94,6 @@ mobile_nav.onclick = (e) => {
     document.body.style.overflow = "";
   }
 };
-
 
 const load_more_btn = document.querySelector(".load_more_btn");
 load_more_btn.onclick = (e) => {
@@ -113,32 +109,73 @@ load_more_btn.onclick = (e) => {
 };
 const data = [
   {
-    name: 'Square Textured Striped',
+    id: 1,
+    name: "Square Textured Striped",
     iamge1: "./images/img_TD/HD_TD_1.webp",
     image2: "./images/img_TD/HD_TD_1_2.webp",
+    price: 150,
   },
   {
-    name: 'Square Textured Striped',
+    id: 2,
+    name: "Square Textured Striped",
     iamge1: "./images/img_TD/HD_TD_2_1.webp",
     image2: "./images/img_TD/HD_TD_2_2.webp",
+    price: 150,
   },
   {
-    name: 'Square Textured Striped',
+    id: 3,
+    name: "Square Textured Striped",
     iamge1: "./images/img_TD/HD_TD_3_1.webp",
     image2: "./images/img_TD/HD_TD_3_2.webp",
+    price: 150,
   },
   {
-    name: 'Square Textured Striped',
+    id: 4,
+    name: "Square Textured Striped",
     iamge1: "./images/img_TD/HD_TD_4_1.webp",
     image2: "./images/img_TD/HD_TD_4_2.webp",
-  }
+    price: 150,
+  },
+  {
+    id: 5,
+    name: "Square Textured Striped",
+    iamge1: "./images/img_TD/HD_TD_5.webp",
+    image2: "./images/img_TD/HD_TD_5_2.webp",
+    price: 150,
+  },
+  {
+    id: 6,
+    name: "Square Textured Striped",
+    iamge1: "./images/img_TD/HD_TD_6.webp",
+    image2: "./images/img_TD/HD_TD_6_2.webp",
+    price: 150,
+  },
+  {
+    id: 7,
+    name: "Square Textured Striped",
+    iamge1: "./images/img_TD/HD_TD_7.webp",
+    image2: "./images/img_TD/HD_TD_7_2.webp",
+    price: 150,
+  },
+  {
+    id: 8,
+    name: "Square Textured Striped",
+    iamge1: "./images/img_TD/HD_TD_8.webp",
+    image2: "./images/img_TD/HD_TD_8_2.webp",
+    price: 150,
+  },
 ];
 const top_trend_container = document.querySelector("#top_trend");
 function loadMoreProduct() {
   data.forEach((d) => {
-       let html = "";
+    let html = "";
     let top_trend_product = document.createElement("div");
-    top_trend_product.classList.add("top_trend_product","invisible","opacity-0","animate-fadein");
+    top_trend_product.classList.add(
+      "top_trend_product",
+      "invisible",
+      "opacity-0",
+      "animate-fadein"
+    );
     html = `<div class="top_trend_img aspect-3/4 group relative overflow-hidden rounded-2xl">
         <a href="#">
             <img src=${d.iamge1}
@@ -167,8 +204,8 @@ function loadMoreProduct() {
                 <span class="tooltip_heart">Quick View</span>
             </a>
         </div>
-        <a href="#"
-            class=" hover:text-white hover:bg-black group-hover:translate-y-0 group-hover:visible group-hover:opacity-100  absolute text-center p-4 text-black text-2xl font-medium bg-white rounded-30 transition-all duration-200 ease-linear trending_btn bottom-8 invisible opacity-0 translate-y-8">ADD
+        <a href="#" id="${d.id}"
+            class=" hover:text-white add-cart hover:bg-black group-hover:translate-y-0 group-hover:visible group-hover:opacity-100  absolute text-center p-4 text-black text-2xl font-medium bg-white rounded-30 transition-all duration-200 ease-linear trending_btn bottom-8 invisible opacity-0 translate-y-8">ADD
             TO CART</a>
     </div>
     <div class="top_trend_text mt-6 flex gap-3 flex-col">
@@ -189,7 +226,6 @@ function loadMoreProduct() {
     top_trend_product.innerHTML = html;
     top_trend_container.appendChild(top_trend_product);
   });
- 
 }
 
 const next_btns = document.querySelectorAll(".next-btn");
@@ -197,15 +233,11 @@ const back_btns = document.querySelectorAll(".back-btn");
 
 Array.from(next_btns).forEach((next_btn) => {
   next_btn.onclick = (e) => {
-    
-    let parentElement = next_btn && getParentElement(next_btn);
-    let trending_list_product = parentElement.querySelector(
-      ".like_section_list"
-    );
+    let parentElement = next_btn && getParentElement(next_btn, "ymh_section");
+    let trending_list_product =
+      parentElement.querySelector(".like_section_list");
     if (trending_list_product) {
-      let product = trending_list_product.querySelector(
-        ".top_trend_product"
-      );
+      let product = trending_list_product.querySelector(".top_trend_product");
       trending_list_product.style.scrollBehavior = "smooth";
       trending_list_product.scrollLeft += product.clientWidth;
     }
@@ -213,15 +245,11 @@ Array.from(next_btns).forEach((next_btn) => {
 });
 Array.from(back_btns).forEach((back_btn) => {
   back_btn.onclick = (e) => {
- 
-    let parentElement = back_btn && getParentElement(back_btn);
-    let trending_list_product = parentElement.querySelector(
-      ".like_section_list"
-    );
+    let parentElement = back_btn && getParentElement(back_btn, "ymh_section");
+    let trending_list_product =
+      parentElement.querySelector(".like_section_list");
     if (trending_list_product) {
-      let product = trending_list_product.querySelector(
-        ".top_trend_product"
-      );
+      let product = trending_list_product.querySelector(".top_trend_product");
       trending_list_product.style.scrollBehavior = "smooth";
       trending_list_product.scrollLeft -= product.clientWidth;
       console.log(trending_list_product.scrollLeft);
@@ -229,18 +257,18 @@ Array.from(back_btns).forEach((back_btn) => {
   };
 });
 
-function getParentElement(element) {
-  let parentElement= element;
-    while (!parentElement.classList.contains("ymh_section")){
-      parentElement = parentElement.parentElement;
-    }
-    return parentElement
+function getParentElement(element, parentElementSelector) {
+  let parentElement = element;
+  while (!parentElement.classList.contains(parentElementSelector)) {
+    parentElement = parentElement.parentElement;
+  }
+  return parentElement;
 }
 
 function getRandomInt(n) {
   return Math.floor(Math.random() * n);
 }
-var product_auto = setInterval(()=>{
+var product_auto = setInterval(() => {
   let randomProduct = data[getRandomInt(data.length)];
   let time_random = getRandomInt(10) + 1;
   if (auto_delete) {
@@ -249,8 +277,8 @@ var product_auto = setInterval(()=>{
   if (document.querySelector("#main_auto")) {
     document.querySelector("#main_auto").remove();
   }
-  let main_auto = document.createElement('div')
-  main_auto.id= 'main_auto'
+  let main_auto = document.createElement("div");
+  main_auto.id = "main_auto";
   let html = ` <div class="autobuy after:animate-diminish translate-y-full invisible opacity-0 after:w-full after:border-b-2 after:rounded-lg after:border-solid after:bottom-0 after:absolute after:-translate-x-4 after:border-black w-32 z-10 transition-all duration-500 ease-linear fixed bottom-20 left-12 hidden md:flex justify-start gap-5 p-4 pb-5 bg-white rounded-2xl">
   <div class="autobuy_image"> 
       <a href="#">
@@ -274,8 +302,8 @@ var product_auto = setInterval(()=>{
       <i class="icon-close"></i>
   </div>
 </div>
-  `
-  main_auto.innerHTML = html
+  `;
+  main_auto.innerHTML = html;
 
   var auto_delete = setTimeout(() => {
     document.querySelector(".autobuy").classList.remove("show");
@@ -284,18 +312,17 @@ var product_auto = setInterval(()=>{
   document.querySelector("body").appendChild(main_auto);
   setTimeout(() => {
     document.querySelector(".autobuy").classList.add("show");
-  },20)
-  
-  let  close_autobuy = document.querySelector(".close_autobuy")
+  }, 20);
+
+  let close_autobuy = document.querySelector(".close_autobuy");
   close_autobuy.onclick = (e) => {
     document.querySelector(".autobuy").classList.remove("show");
     clearTimeout(auto_delete);
   };
-},8000)
-
+}, 8000);
 
 var check = true;
-const header = document.querySelector("header")
+const header = document.querySelector("header");
 window.addEventListener("scroll", () => {
   const windowHeight = document.documentElement.clientHeight;
   const maxScrollHeight = document.documentElement.scrollHeight - windowHeight;
@@ -328,5 +355,263 @@ window.addEventListener("scroll", () => {
 
   let header_top_list = document.querySelector(".header_mid");
   header.classList.toggle("stickyy", this.window.scrollY > header.clientHeight);
-  header_top_list.classList.toggle("d-none", this.window.scrollY > header.clientHeight);
+  header_top_list.classList.toggle(
+    "d-none",
+    this.window.scrollY > header.clientHeight
+  );
 });
+//
+/* ======================================== 
+    Cart
+   ====================================== */
+
+var cart_list = JSON.parse(localStorage.getItem("cart_list")) || [];
+
+if (cart_list.length) {
+  render_cart_product(cart_list);
+  have_cart();
+  increase_cart();
+  decrease_cart();
+  render_text_cart();
+  render_subtotal();
+} else {
+  no_cart();
+}
+render_cart_length();
+
+const bls_cart = document.querySelectorAll(".bls_cart");
+bls_cart.forEach((i) => {
+  i.onclick = function (e) {
+    let element = document.getElementsByClassName(this.id);
+    let bls_cart_layer = document.querySelector(".bls_cart_layer");
+    element[0].classList.add("translate-y-0");
+    bls_cart_layer.classList.add("show_up");
+  };
+});
+
+const cancel_btn = document.querySelectorAll(".cancel_btn");
+cancel_btn.forEach((i) => {
+  i.onclick = function (e) {
+    let parentElement = this.parentElement;
+    let bls_cart_layer = document.querySelector(".bls_cart_layer");
+    parentElement.classList.remove("translate-y-0");
+    bls_cart_layer.classList.remove("show_up");
+  };
+});
+
+const term = document.querySelector("#term");
+term.onclick = function (e) {
+  let checkout_btn = document.querySelector("#checkout");
+  if (term.checked) {
+    checkout_btn.removeAttribute("disabled");
+    checkout_btn.classList.remove("opacity-80");
+    checkout_btn.classList.add("hover:text-black", "hover:bg-white");
+  } else {
+    checkout_btn.setAttribute("disabled", true);
+    checkout_btn.classList.add("opacity-80");
+    checkout_btn.classList.remove("hover:text-black");
+    checkout_btn.classList.remove("hover:bg-white");
+  }
+};
+
+const close_cart_btn = document.querySelector(".close_cart_btn");
+close_cart_btn.onclick = function () {
+  cart_hide();
+};
+const cart_layer = document.querySelector(".cart-layer");
+cart_layer.onclick = (e) => {
+  if (e.target.classList.contains("cart-layer")) {
+    cart_hide();
+  }
+};
+const return_to_shop = document.querySelector(".return-to-shop");
+return_to_shop.onclick = (e) => {
+  cart_hide();
+};
+function cart_show_up() {
+  let cart = document.querySelector(".cart_block");
+  let cart_layer = document.querySelector(".cart-layer");
+  cart.classList.remove("translate-x-full");
+  cart_layer.classList.remove("after:invisible");
+  cart_layer.classList.remove("after:opacity-0");
+  document.body.style.overflow = "hidden";
+}
+function cart_hide() {
+  let cart = document.querySelector(".cart_block");
+  let cart_layer = document.querySelector(".cart-layer");
+  cart.classList.add("translate-x-full");
+  cart_layer.classList.add("after:invisible", "after:opacity-0");
+  document.body.style.overflow = "";
+}
+
+function no_cart() {
+  let cart_body_item = document.querySelector(".cart_body_item");
+  let no_cart = document.querySelector(".no-cart");
+  cart_body_item.classList.add("hidden");
+  no_cart.classList.remove("hidden");
+}
+
+function have_cart() {
+  let cart_body_item = document.querySelector(".cart_body_item");
+  let no_cart = document.querySelector(".no-cart");
+  no_cart.classList.add("hidden");
+  cart_body_item.classList.remove("hidden");
+}
+
+function setLocalStorage(cart_list) {
+  localStorage.setItem("cart_list", JSON.stringify(cart_list));
+}
+
+const cart_btn = document.querySelector("#cart_btn");
+cart_btn.onclick = function () {
+  cart_show_up();
+};
+function render_cart_product(cart_list) {
+  let bls_items = document.querySelector(".bls-items");
+  bls_items.innerHTML = "";
+  cart_list.forEach((e) => {
+    let div = document.createElement("div");
+    div.className = "minicart-product flex gap-6 pb-8 mb-8";
+    let html = `<img src="${e.iamge1}" width="87" height="116" alt="image" class="rounded-xl" />
+      <div class="minicart-product-info flex flex-col justify-start relative flex-1">
+          <a href="#" class="text-black text-3xl font-normal">${e.name}</a>
+          <p class="text-text-color font-medium text-3xl mt-4">${e.price.toFixed(
+            2
+          )}$</p>
+          <div class="quantity mt-4">
+              <div
+                  class="bg-floor_1-BM rounded-lg border border-solid border-border-color items-center inline-flex">
+                  <button data-id="${
+                    e.id
+                  }" aria-label="Button" class="w-10 decrease flex items-center justify-center">
+                      <svg width="11" height="12" viewBox="0 0 11 2" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11 0.5L11 1.5L-4.37114e-08 1.5L0 0.5L11 0.5Z" fill="#111111">
+                          </path>
+                      </svg>
+                  </button>
+                  <input type="text" value="${e.quantity}"
+                      class="text-2xl h-12 quantity w-12 text-center font-normal bg-floor_1-BM " aria-label="Quantity" />
+                  <button data-id="${
+                    e.id
+                  }" aria-label="Button" class="w-10 increase flex items-center justify-center">
+                      <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M5 11.5H6L6 6.5H11V5.5H6L6 0.5H5L5 5.5H0V6.5H5L5 11.5Z"
+                              fill="#111111"></path>
+                      </svg>
+                  </button>
+
+              </div>
+          </div>
+      </div>`;
+    div.innerHTML = html;
+    bls_items.appendChild(div);
+  });
+}
+
+function render_cart_length() {
+  let cart_count = document.querySelectorAll(".cart_count");
+  cart_count.forEach(function (c) {
+    c.innerHTML = cart_list.reduce((sum, e) => {
+      return e.quantity + sum;
+    }, 0);
+  });
+}
+
+function increase_cart() {
+  let increase = document.querySelectorAll(".increase");
+  increase.forEach((item) => {
+    item.onclick = function (e) {
+      let parentElement = this.parentElement;
+      let quantity = parentElement.querySelector(".quantity");
+      let d = parseInt(quantity.value);
+      d += 1;
+      quantity.value = d;
+      let product_cart = cart_list.find((e) => e.id == this.dataset.id);
+      product_cart.quantity += 1;
+      render_cart_length();
+      setLocalStorage(cart_list);
+      render_subtotal();
+    };
+  });
+}
+function decrease_cart() {
+  let decrease = document.querySelectorAll(".decrease");
+  decrease.forEach((item) => {
+    item.onclick = function (e) {
+      let parentElement = this.parentElement;
+      let quantity = parentElement.querySelector(".quantity");
+      let parentElement2 = getParentElement(this, "minicart-product");
+      let d = parseInt(quantity.value);
+      d -= 1;
+      let product_cart = cart_list.find((e) => e.id == this.dataset.id);
+      product_cart.quantity -= 1;
+      if (d === 0) {
+        parentElement2.remove();
+        cart_list = cart_list.filter((e) => e.id != this.dataset.id);
+      }
+      quantity.value = d;
+      render_cart_length();
+      setLocalStorage(cart_list);
+      render_subtotal();
+      if (!cart_list.length) {
+        no_cart();
+        render_text_cart();
+      }
+    };
+  });
+}
+function render_text_cart() {
+  let text_cart = document.querySelector(".text-cart");
+  let percent_shipping = document.querySelector(".percent-shipping");
+  let car_icon = document.querySelector(".car_icon")
+  if (cart_list.length) {
+    text_cart.innerHTML = "Congratulations! You've got free shipping!";
+    percent_shipping.classList.add("go");
+    car_icon.classList.add("left-95")
+  } else {
+    text_cart.innerHTML = `Spend $100.00 more to enjoy <span
+      class="uppercase text-2xl text-ship-color font-semibold">Free Shipping! </span>`;
+    percent_shipping.classList.remove("go");
+    car_icon.classList.add("remove-95")
+
+  }
+}
+function render_subtotal() {
+  let subtotal = document.querySelector("#subtotal");
+  subtotal.innerHTML = cart_list
+    .reduce((sum, e) => {
+      return sum + e.price * e.quantity;
+    }, 0)
+    .toFixed(2) + "$";
+}
+
+const add_cart = document.querySelectorAll(".add-cart");
+add_cart.forEach((cart) => {
+  cart.onclick = function (e) {
+    let product = data.find((e) => e.id == this.id);
+    let product_cart = cart_list.find((e) => e.id === product.id);
+
+    product_cart
+      ? (product_cart.quantity += 1)
+      : cart_list.push({ ...product, quantity: 1 });
+
+    cart_show_up();
+    render_cart_product(cart_list);
+    render_cart_length();
+    increase_cart();
+    decrease_cart();
+    have_cart();
+    render_text_cart();
+    setLocalStorage(cart_list);
+    render_subtotal();
+  };
+});
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* ======================================== 
+   End  Cart
+   ====================================== */

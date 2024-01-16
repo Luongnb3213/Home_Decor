@@ -471,7 +471,7 @@ function render_cart_product(cart_list) {
   bls_items.innerHTML = "";
   cart_list.forEach((e) => {
     let div = document.createElement("div");
-    div.className = "minicart-product flex gap-6 pb-8 mb-8";
+    div.className = "minicart-product flex gap-6 pb-8 mb-8 border-dashed border-b border-border-color";
     let html = `<img src="${e.iamge1}" width="87" height="116" alt="image" class="rounded-xl" />
       <div class="minicart-product-info flex flex-col justify-start relative flex-1">
           <a href="#" class="text-black text-3xl font-normal">${e.name}</a>
